@@ -19,16 +19,16 @@ POFILES := $(foreach DIR, $(LANGDIRS), $(filter $(foreach PO, $(PONAMES), $(DIR)
 L10NXMLFILES := $(foreach DIR, $(LANGDIRS), $(patsubst $(DIR)/%.po,$(DIR)/xml/%.xml,$(POFILES)))
 
 
-all : xml2pot po2xml
+all : pot l10nxml
 
-xml2pot : $(POTFILES)
+pot : $(POTFILES)
 
-po2xml : $(L10NXMLFILES)
+l10nxml : $(L10NXMLFILES)
 
 l10n/templates/%.pot : xml/%.xml
 	xml2pot $< > $@
 
-$(foreach DIR, $(LANGDIRS), $(eval $(DIR)/xml/%.xml : xml/%.xml $(DIR)/%.po; mkdir -p $(DIR)/xml ; po2xml $$^ | xmllint --format - > $$@ 2>/dev/null ) )
+$(foreach DIR, $(LANGDIRS), $(eval $(DIR)/xml/%.xml : xml/%.xml $(DIR)/%.po; mkdir -p $(DIR)/xml ; po2xml $$^ | daps-xmlformat -i 2>/dev/null ) )
 
 clean : clean_pot clean_l10nxml
 
