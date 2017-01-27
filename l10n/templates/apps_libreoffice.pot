@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2017-01-20 18:23+0000\n"
+"POT-Creation-Date: 2017-01-31 19:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
@@ -1198,8 +1198,9 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: apps_libreoffice.xml:995 apps_libreoffice.xml:1014 apps_libreoffice.xml:1033
-#: apps_libreoffice.xml:1156 apps_libreoffice.xml:1173
+#: apps_libreoffice.xml:995 apps_libreoffice.xml:1014
+#: apps_libreoffice.xml:1033 apps_libreoffice.xml:1156
+#: apps_libreoffice.xml:1173
 #, no-c-format
 msgid "<para>All</para>"
 msgstr ""

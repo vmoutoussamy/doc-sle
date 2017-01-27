@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2017-01-20 18:23+0000\n"
+"POT-Creation-Date: 2017-01-31 19:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
@@ -62,10 +62,10 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: storage_iscsi-lio.xml:40 storage_iscsi-lio.xml:247 storage_iscsi-lio.xml:428
-#: storage_iscsi-lio.xml:531 storage_iscsi-lio.xml:709
-#: storage_iscsi-lio.xml:910 storage_iscsi-lio.xml:1407
-#: storage_iscsi-lio.xml:1527
+#: storage_iscsi-lio.xml:40 storage_iscsi-lio.xml:247
+#: storage_iscsi-lio.xml:428 storage_iscsi-lio.xml:531
+#: storage_iscsi-lio.xml:709 storage_iscsi-lio.xml:910
+#: storage_iscsi-lio.xml:1407 storage_iscsi-lio.xml:1527
 #, no-c-format
 msgid "Launch &yast; as the &rootuser; user."
 msgstr ""

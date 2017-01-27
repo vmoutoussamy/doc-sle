@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2017-01-20 18:23+0000\n"
+"POT-Creation-Date: 2017-01-31 19:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
@@ -21,10 +21,10 @@ msgid "Encrypting Partitions and Files"
 msgstr ""
 
 #. Tag: primary
-#: security_cryptofs.xml:17 security_cryptofs.xml:100 security_cryptofs.xml:104
-#: security_cryptofs.xml:125 security_cryptofs.xml:231
-#: security_cryptofs.xml:255 security_cryptofs.xml:283
-#: security_cryptofs.xml:380
+#: security_cryptofs.xml:17 security_cryptofs.xml:100
+#: security_cryptofs.xml:104 security_cryptofs.xml:125
+#: security_cryptofs.xml:231 security_cryptofs.xml:255
+#: security_cryptofs.xml:283 security_cryptofs.xml:380
 #, no-c-format
 msgid "<primary>encrypting</primary>"
 msgstr ""
@@ -36,7 +36,8 @@ msgid "file systems"
 msgstr ""
 
 #. Tag: secondary
-#: security_cryptofs.xml:19 security_cryptofs.xml:124 security_cryptofs.xml:254
+#: security_cryptofs.xml:19 security_cryptofs.xml:124
+#: security_cryptofs.xml:254
 #, no-c-format
 msgid "<secondary>encrypting</secondary>"
 msgstr ""

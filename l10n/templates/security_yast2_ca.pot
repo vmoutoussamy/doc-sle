@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2017-01-20 18:23+0000\n"
+"POT-Creation-Date: 2017-01-31 19:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
@@ -45,20 +45,21 @@ msgid ""
 msgstr ""
 
 #. Tag: primary
-#: security_yast2_ca.xml:51 security_yast2_ca.xml:496 security_yast2_ca.xml:507
-#: security_yast2_ca.xml:706 security_yast2_ca.xml:799
-#: security_yast2_ca.xml:931 security_yast2_ca.xml:1012
-#: security_yast2_ca.xml:1076 security_yast2_ca.xml:1215
-#: security_yast2_ca.xml:1254
+#: security_yast2_ca.xml:51 security_yast2_ca.xml:496
+#: security_yast2_ca.xml:507 security_yast2_ca.xml:706
+#: security_yast2_ca.xml:799 security_yast2_ca.xml:931
+#: security_yast2_ca.xml:1012 security_yast2_ca.xml:1076
+#: security_yast2_ca.xml:1215 security_yast2_ca.xml:1254
 #, no-c-format
 msgid "<primary>&yast;</primary>"
 msgstr ""
 
 #. Tag: secondary
-#: security_yast2_ca.xml:52 security_yast2_ca.xml:508 security_yast2_ca.xml:707
-#: security_yast2_ca.xml:800 security_yast2_ca.xml:932
-#: security_yast2_ca.xml:1013 security_yast2_ca.xml:1077
-#: security_yast2_ca.xml:1216 security_yast2_ca.xml:1255
+#: security_yast2_ca.xml:52 security_yast2_ca.xml:508
+#: security_yast2_ca.xml:707 security_yast2_ca.xml:800
+#: security_yast2_ca.xml:932 security_yast2_ca.xml:1013
+#: security_yast2_ca.xml:1077 security_yast2_ca.xml:1216
+#: security_yast2_ca.xml:1255
 #, no-c-format
 msgid "<secondary>X.509 certification</secondary>"
 msgstr ""

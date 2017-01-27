@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2017-01-20 18:23+0000\n"
+"POT-Creation-Date: 2017-01-31 19:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
@@ -40,11 +40,12 @@ msgid "<dm:bugtracker></dm:bugtracker> <dm:translation>yes</dm:translation>"
 msgstr ""
 
 #. Tag: primary
-#: apache2.xml:27 apache2.xml:31 apache2.xml:81 apache2.xml:219 apache2.xml:264
-#: apache2.xml:481 apache2.xml:490 apache2.xml:735 apache2.xml:739
-#: apache2.xml:959 apache2.xml:1026 apache2.xml:1081 apache2.xml:1374
-#: apache2.xml:1448 apache2.xml:1570 apache2.xml:1629 apache2.xml:1778
-#: apache2.xml:1817 apache2.xml:2062 apache2.xml:2391 apache2.xml:2513
+#: apache2.xml:27 apache2.xml:31 apache2.xml:81 apache2.xml:219
+#: apache2.xml:264 apache2.xml:481 apache2.xml:490 apache2.xml:735
+#: apache2.xml:739 apache2.xml:959 apache2.xml:1026 apache2.xml:1081
+#: apache2.xml:1374 apache2.xml:1448 apache2.xml:1570 apache2.xml:1629
+#: apache2.xml:1778 apache2.xml:1817 apache2.xml:2062 apache2.xml:2391
+#: apache2.xml:2513
 #, no-c-format
 msgid "Apache"
 msgstr ""

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2017-01-20 18:23+0000\n"
+"POT-Creation-Date: 2017-01-31 19:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
@@ -100,8 +100,8 @@ msgid ""
 msgstr ""
 
 #. Tag: para
-#: deployment_remote.xml:63 deployment_remote.xml:181 deployment_remote.xml:383
-#: deployment_remote.xml:492
+#: deployment_remote.xml:63 deployment_remote.xml:181
+#: deployment_remote.xml:383 deployment_remote.xml:492
 #, no-c-format
 msgid ""
 "For this type of installation, make sure that the following requirements are "
@@ -129,8 +129,8 @@ msgid "Local repository, for example a DVD."
 msgstr ""
 
 #. Tag: para
-#: deployment_remote.xml:87 deployment_remote.xml:193 deployment_remote.xml:395
-#: deployment_remote.xml:516
+#: deployment_remote.xml:87 deployment_remote.xml:193
+#: deployment_remote.xml:395 deployment_remote.xml:516
 #, no-c-format
 msgid "Target system with working network connection."
 msgstr ""

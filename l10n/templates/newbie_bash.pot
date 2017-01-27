@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2017-01-20 18:23+0000\n"
+"POT-Creation-Date: 2017-01-31 19:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
@@ -21,9 +21,9 @@ msgid "Shell Basics"
 msgstr ""
 
 #. Tag: primary
-#: newbie_bash.xml:12 newbie_bash.xml:49 newbie_bash.xml:92 newbie_bash.xml:876
-#: newbie_bash.xml:1687 newbie_bash.xml:1695 newbie_bash.xml:1818
-#: newbie_bash.xml:1826
+#: newbie_bash.xml:12 newbie_bash.xml:49 newbie_bash.xml:92
+#: newbie_bash.xml:876 newbie_bash.xml:1687 newbie_bash.xml:1695
+#: newbie_bash.xml:1818 newbie_bash.xml:1826
 #, no-c-format
 msgid "<primary>shell</primary>"
 msgstr ""
