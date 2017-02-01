@@ -20,6 +20,7 @@ POTFILES := $(patsubst xml/%.xml,l10n/templates/%.pot,$(XMLFILES))
 PONAMES := $(patsubst xml/%.xml, %, $(XMLFILES))
 
 # Language directories
+# FIXME: This currently finds files too, not just dirs
 LANGDIRS := $(filter-out l10n/templates, $(wildcard l10n/*))
 
 # Translated GNU Gettext files (PO files)
@@ -50,7 +51,7 @@ l10nxml: l10ndc po $(L10NXMLFILES)
 
 
 l10n/templates/%.pot: xml/%.xml
-	xml2pot $< > $@
+	xml2pot $< | msguniq > $@
 
 po: pot $(POFILES)
 %.po: ../../templates/%.pot
