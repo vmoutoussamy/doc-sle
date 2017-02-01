@@ -39,11 +39,24 @@ all: pot po l10ndc l10nxml
 pot: $(POTFILES)
 
 l10nxml: l10ndc po $(L10NXMLFILES)
-%.xml: ../po/%.po
+
+# FIXME: the final line here is a bit hefty/hacky:
+# 1 daps-xmlformat to get mostly sane XML formatting
+# 2 tail removes the first line in the XML which contains the name of the
+#  configuration file used by daps-xmlformat (and thus makes the XML invalid)
+# 3 xmllint removes the line breaks between "<tag" and ">" which daps-xmlformat
+#   leaves in; xmllint produces entity errors, which are directed to /dev/null
+l10n/de/xml/%.xml: ../po/%.po
 	if [ ! -d "$$(dirname '$@')" ]; then \
    mkdir -p "$$(dirname '$@')"; \
    fi
-	po2xml $< | daps-xmlformat > $@ 2>/dev/null
+	po2xml $< | daps-xmlformat | tail -n +2 | xmllint - > $@ 2>/dev/null
+
+l10n/de/xml/book_sle_tuning.xml: l10n/de/po/book_sle_tuning.po xml/book_sle_tuning.xml
+	if [ ! -d "$$(dirname '$@')" ]; then \
+   mkdir -p "$$(dirname '$@')"; \
+   fi
+	po2xml $< | daps-xmlformat | tail -n +2 | xmllint - > $@ 2>/dev/null
 
 #$(foreach DIR, $(LANGDIRS), $(eval $(DIR)/xml/%.xml : xml/%.xml $(DIR)/po/%.po
 #	if [ ! -d $(DIR)/xml ]; then mkdir -p $(DIR)/xml; fi
