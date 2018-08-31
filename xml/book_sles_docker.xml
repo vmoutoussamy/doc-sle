@@ -44,9 +44,37 @@ https://www.docker.com/legal/trademark-guidelines
    <dm:translation>no</dm:translation>
   </dm:docmanager>
  </info>
- <!-- Docker overview and architecture -->
+
+<!--
+    Reorganisation of Structure
+
+   About this Guide
+   Conceptual Overview
+   Product Overview
+   System Requirements and Recommendations
+   Installation
+     * General Preparation
+     * Networking
+     * Updates
+   Preparing Custom Docker Images
+     * Obtaining Base Images
+     * Creating a Dockerfile
+     * Adding SLE Extensions & Modules to Images
+   Building and Running Docker Images
+     * Specific Package Versions
+     * Using Specific Configurations
+     * Running in the Background
+   Sharing Data between Host and Docker Images (?)
+   Storing Images on Docker Registry
+ -->
+
+ <!-- Docker preface -->
+ <xi:include href="docker_intro.xml"/>
+ <!-- Conceptual Overview -->
+ <xi:include href="docker_concept.xml"/>
+ <!-- Product Overview -->
  <xi:include href="docker_overview.xml"/>
- <!-- Installation of Docker -->
+ <!-- Installation -->
  <xi:include href="docker_installation.xml"/>
  <!-- Setting up docker registry -->
  <xi:include href="docker_registry.xml"/>
@@ -57,6 +85,7 @@ https://www.docker.com/legal/trademark-guidelines
  <!-- Working with containers -->
  <xi:include href="docker_containers.xml"/>
  <!-- Docupdates -->
-  <xi:include href="docker_docupdates.xml"/>
+ <xi:include href="docker_docupdates.xml"/>
+
  <xi:include href="common_legal.xml"/>
 </book>
