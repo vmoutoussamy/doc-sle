@@ -9,82 +9,11 @@
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
  <title>Creating &docker; Images of Applications</title>
- <para>
-  &deng; is a technology that can help minimize resources used to run or
-  build applications. There are several types of applications that are
-  suitable to run inside a &docker; container like daemons, Web pages or
-  applications that expose ports for communication. You can use &deng; to
-  automate building and deployment processes by adding the build process
-  into a &docker; image, then building the image and then running containers
-  based on that image.
- </para>
- <para>
-  Running an application inside a &docker; container has the
-  following advantages:
- </para>
- <itemizedlist>
-  <listitem>
-   <para>
-    You can minimize the runtime environment of the application as you can add
-    to the &docker; image of the application just the required processes and
-    applications.
-   </para>
-  </listitem>
-  <listitem>
-   <para>
-    The image with your application is portable across machines also with
-    different Linux host systems.
-   </para>
-  </listitem>
-  <listitem>
-   <para>
-    You can share the image of your application by using a repository.
-   </para>
-  </listitem>
-  <listitem>
-   <para>
-    You can use different versions of required packages in the container than
-    the host system uses without having problems with dependencies.
-   </para>
-  </listitem>
-  <listitem>
-   <para>
-    You can run several instances of the same application that are completely
-    independent from each other.
-   </para>
-  </listitem>
- </itemizedlist>
- <para>
-  Using &deng; to build applications has the following advantages:
- </para>
- <itemizedlist>
-  <listitem>
-   <para>
-    You can prepare a complete building image.
-   </para>
-  </listitem>
-  <listitem>
-   <para>
-    Your build always runs in the same environment.
-   </para>
-  </listitem>
-  <listitem>
-   <para>
-    Developers can test their code in the same environment as used in
-    production.
-   </para>
-  </listitem>
-  <listitem>
-   <para>
-    You can set up an automated building process.
-   </para>
-  </listitem>
- </itemizedlist>
- <para>
+  <para>
   The following section provides examples and tips on creating &docker; images
   for applications. Prior to reading further, make sure that you have
-  activated your &slsa; base &docker; image as described in
-  <xref linkend="Building_Pre-build_Images"/>.
+  activated your &productname; base &docker; image as described in
+  <xref linkend="Downloading_Pre-build_Images"/>.
  </para>
  <sect1 xml:id="Application_with_specific_dependencies">
   <title>Running an Application with Specific Package Versions</title>
@@ -95,11 +24,11 @@
    should run your application. You can modify your application to work with
    another version or you can create a &docker; image with that particular
    package version. The following example of a <filename>Dockerfile</filename>
-   shows an image based on a current version of &slsa; but with an older
+   shows an image based on a current version of &productname; but with an older
    version of the <literal>example</literal> package
   </para>
 
-<screen>FROM registry.suse.com/suse/sles12sp4
+<screen>FROM registry.suse.com/suse/sle15
 MAINTAINER Tux
 
 RUN zypper ref &amp;&amp; zypper in -f example-1.0.0-0
@@ -126,7 +55,7 @@ CMD ["-i"]</screen>
   <orderedlist>
    <listitem>
     <para>
-     Updates the &slsa; repositories.
+     Updates the &productname; repositories.
     </para>
    </listitem>
    <listitem>
@@ -171,7 +100,7 @@ CMD ["-i"]</screen>
 
   <para>
    You may need to run an application that is delivered in a standard package
-   accessible through &slsa; repositories but you may need to use a different
+   accessible through &productname; repositories but you may need to use a different
    configuration or use specific environment variables. In case you would like
    to run several instances of the application with non-standard configuration,
    you can create an own image that will pass the custom configuration to the
@@ -182,52 +111,57 @@ CMD ["-i"]</screen>
    An example with the <emphasis>example</emphasis> application follows:
   </para>
 
-<screen>FROM registry.suse.com/suse/sles12sp4
-RUN zypper ref &amp;&amp; zypper --non-interactive in example
+<screen>FROM registry.suse.com/suse/sle15 <co xml:id="co.dockerfile.specificconf.from"/>
+RUN zypper ref &amp;&amp; zypper --non-interactive in example <co xml:id="co.dockerfile.specificconf.refreshinstall"/>
 
-ENV BACKUP=/backup
+ENV BACKUP=/backup <co xml:id="co.dockerfile.specificconf.env"/>
 
-RUN mkdir -p $BACKUP
-COPY configuration_example /etc/example/
+RUN mkdir -p $BACKUP <co xml:id="co.dockerfile.specificconf.mkdir"/>
+COPY configuration_example /etc/example/ <co xml:id="co.dockerfile.specificconf.configuration"/>
 
-ENTRYPOINT ["/etc/bin/example"]</screen>
+ENTRYPOINT ["/etc/bin/example"] <co xml:id="co.dockerfile.specificconf.entrypoint"/></screen>
 
   <para>
    The above example <filename>Dockerfile</filename> results in the following
    operations:
   </para>
 
-  <orderedlist>
-   <listitem>
+ <calloutlist>
+  <callout arearefs="co.dockerfile.specificconf.from">
+    <para>
+     Base image, taken from <xref linkend="Downloading_Pre-build_Images"/>.
+    </para>
+   </callout>
+   <callout arearefs="co.dockerfile.specificconf.refreshinstall">
     <para>
      Refreshing of repositories and installation of the
      <emphasis>example</emphasis>.
     </para>
-   </listitem>
-   <listitem>
+   </callout>
+   <callout arearefs="co.dockerfile.specificconf.env">
     <para>
-     Sets a <literal>BACKUP</literal> environment variable (the variable
-     persists to containers started from the image). You can always overwrite
-     the value of the variable with a new one while running the container by
-     specifying a new value.
-    </para>
-   </listitem>
-   <listitem>
+      Sets a <literal>BACKUP</literal> environment variable (the variable
+      persists to containers started from the image). You can always overwrite
+      the value of the variable with a new one while running the container by
+      specifying a new value.
+     </para>
+   </callout>
+   <callout arearefs="co.dockerfile.specificconf.mkdir">
     <para>
      Creates the directory <literal>/backup</literal>.
     </para>
-   </listitem>
-   <listitem>
+   </callout>
+   <callout arearefs="co.dockerfile.specificconf.configuration">
     <para>
      Copies the <filename>configuration_example</filename> to the image.
     </para>
-   </listitem>
-   <listitem>
+   </callout>
+   <callout arearefs="co.dockerfile.specificconf.entrypoint">
     <para>
      Runs the <emphasis>example</emphasis> application.
     </para>
-   </listitem>
-  </orderedlist>
+   </callout>
+  </calloutlist>
 
   <para>
    You can now build the image. After a successful build, you can run a
@@ -243,8 +177,8 @@ ENTRYPOINT ["/etc/bin/example"]</screen>
    data sharing by using volumes. You can declare a mount point directly in the
    <filename>Dockerfile</filename>. But you cannot specify a directory on the
    host system in the <filename>Dockerfile</filename> as the directory may not
-   be accessible at the build time. You can find the mounted directory in the
-   <literal>/var/lib/docker/volumes/</literal> directory on the host system.
+   be accessible at build time. Find the mounted directory under
+   <literal>/var/lib/docker/volumes/</literal> on the host system.
   </para>
 
   <note>
@@ -261,7 +195,7 @@ ENTRYPOINT ["/etc/bin/example"]</screen>
   </note>
 
   <para>
-   You can specify a particular mount point on the host system when running a
+   Specify a particular mount point on the host system when running a
    container by using the <literal>-v</literal> option:
   </para>
 
@@ -329,7 +263,7 @@ CMD ["-D", "FOREGROUND"]</screen>
    <calloutlist>
     <callout arearefs="co.dockerfile.apache2.from">
      <para>
-      Base image, taken from <xref linkend="Building_Pre-build_Images"/>.
+      Base image, taken from <xref linkend="Downloading_Pre-build_Images"/>.
      </para>
     </callout>
     <callout arearefs="co.dockerfile.apache2.maintainer">
@@ -347,7 +281,7 @@ CMD ["-D", "FOREGROUND"]</screen>
     </callout>
     <callout arearefs="co.dockerfile.apache2.refresh">
      <para>
-      Command to refresh repositories and services
+      Command to refresh repositories and services.
      </para>
     </callout>
     <callout arearefs="co.dockerfile.apache2.install">
@@ -407,7 +341,7 @@ CMD ["-D", "FOREGROUND"]</screen>
      <step>
       <para>
        Make sure the &sle; images from the &suse; Registry are installed,
-       as described in <xref linkend="Building_Pre-build_Images"/>.
+       as described in <xref linkend="Downloading_Pre-build_Images"/>.
       </para>
      </step>
      <step>
@@ -497,7 +431,7 @@ CONTAINER ID        IMAGE               COMMAND                  [...]
    <title>Creating a &docker; Container with your Own Data</title>
    <step>
     <para>
-     In <filename>Dockerfile</filename>:
+     In the <filename>Dockerfile</filename>:
     </para>
     <itemizedlist>
      <listitem>

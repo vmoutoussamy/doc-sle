@@ -9,10 +9,10 @@
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
  <title>Product Overview</title>
-
+ <remark>toms 2019-02-04: add here some sentence</remark>
  <sect1 xml:id="Docker_Used_Drivers">
   <title>&docker; Drivers</title>
-
+  <remark>toms 2019-02-04: add here some sentence</remark>
   <sect2 xml:id="Container_Drivers">
    <title>Container Drivers</title>
    <para>
@@ -52,24 +52,16 @@
       file system.
      </para>
     </listitem>
-    <listitem>
-     <para>
-      <systemitem class="resource">AUFS</systemitem>: this driver relies on the
-      AUFS union file system. Neither the upstream kernel nor the &suse; kernel
-      supports this file system. Hence the AUFS driver is not built into the
-      &suse; <package>docker</package> package.
-     </para>
-    </listitem>
    </itemizedlist>
    <para>
-    &slea;&nbsp;12 uses the Btrfs file system by default, which leads &deng; to
+    Since &productname;&nbsp;12, the Btrfs file system is used by default, which leads &deng; to
     use the <systemitem class="resource">btrfs</systemitem> driver.
    </para>
    <para>
     It is possible to specify which driver to use by changing the value of the
     <envar>DOCKER_OPTS</envar> variable defined inside of the
     <filename>/etc/sysconfig/docker</filename> file. This can be done either
-    manually or using &yast; by browsing to <menuchoice>
+   manually or using &yast; by browsing to <menuchoice>
     <guimenu>System</guimenu> <guimenu>/etc/sysconfig Editor</guimenu>
     <guimenu>System</guimenu> <guimenu>Management</guimenu>
     <guimenu>DOCKER_OPTS</guimenu> </menuchoice> menu and entering the

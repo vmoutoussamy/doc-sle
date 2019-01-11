@@ -8,9 +8,9 @@
  xmlns="http://docbook.org/ns/docbook" version="5.0"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
- <title>&deng; Installation</title>
+ <title>Setting Up &deng;</title>
  <sect1 xml:id="Preparation">
-  <title>General Preparation</title>
+  <title>Preparing the Host</title>
 
   <para>
    Prepare the host as described below. Before installing any &docker;-related
@@ -35,7 +35,7 @@
   <!--taroth 2015-07-02: http://doccomments.provo.novell.com/comments/28724 -->
 
   <procedure>
-   <title>Enabling the Container Module Using &yast;</title>
+   <title>Enabling the Container Module Using Graphical User Interface &yast;</title>
    <step>
 
     <para>
@@ -72,7 +72,7 @@
   </procedure>
 
   <procedure>
-   <title>Enabling the Container Module Using SUSEConnect</title>
+   <title>Enabling the Container Module from Command Line Using SUSEConnect</title>
    <step>
     <para>
      The Container Module can be added also with the following command:
@@ -102,25 +102,35 @@
     </para>
     <screen>&prompt.sudo;systemctl enable docker.service</screen>
     <para>
-     This will automatically enable docker.socket in consequence.
+     This will automatically enable <systemitem>docker.socket</systemitem>
+     in consequence.
     </para>
    </step>
    <step>
     <para>
-     In case you will use Portus and an SSL secured registry, open the
-     <filename>/etc/sysconfig/docker</filename> file. Search for the parameter
-     <parameter>DOCKER_OPTS</parameter> and add <literal>--insecure-registry
-     <replaceable>ADDRESS_OF_YOUR_REGISTRY</replaceable></literal>.
+     If you want to use Portus and an SSL secured registry:
     </para>
-   </step>
-   <step>
-    <para>
-     In the production environment when using the SSL secured registry with
-     Portus, add CA certificates to the directory
-     <filename>/etc/docker/certs.d/<replaceable>REGISTRY_ADDRESS</replaceable></filename>
-     and copy the CA certificates to your system:
-    </para>
-    <screen>&prompt.sudo;cp CA /etc/pki/trust/anchors/ &amp;&amp; update-ca-certificates</screen>
+    <substeps>
+     <step>
+      <para>Open the <filename>/etc/sysconfig/docker</filename> file. Search for
+       the parameter <parameter>DOCKER_OPTS</parameter> and add
+       <literal>--insecure-registry <replaceable>ADDRESS_OF_YOUR_REGISTRY</replaceable></literal>.
+      </para>
+     </step>
+     <step>
+      <para>
+       Add CA certificates to the directory
+       <filename>/etc/docker/certs.d/<replaceable>REGISTRY_ADDRESS</replaceable></filename>
+      </para>
+      <screen>&prompt.sudo;cp CA /etc/pki/trust/anchors/</screen>
+     </step>
+     <step>
+      <para>
+       Copy the CA certificates to your system:
+      </para>
+      <screen>&prompt.sudo;update-ca-certificates</screen>
+     </step>
+    </substeps>
    </step>
    <step>
     <para>
@@ -132,39 +142,44 @@
     </para>
    </step>
   </procedure>
-
   <para>
    The &docker; daemon listens on a local socket which is accessible only by the
    <systemitem class="username">root</systemitem> user and by the members of
    the <systemitem class="groupname">docker</systemitem> group. The
    <systemitem class="groupname">docker</systemitem> group is automatically
-   created at package installation time. To allow a certain user to connect to
-   the local &docker; daemon, use the following command:
+   created at package installation time.
+  </para>
+  <para>
+   To allow a certain user to connect to the local &docker; daemon,
+   use the following command:
   </para>
   <screen>&prompt.sudo;/usr/sbin/usermod -aG docker <replaceable>USERNAME</replaceable></screen>
-
   <para>
    The user can communicate with the local &docker; daemon upon their next login.
   </para>
  </sect1>
  <sect1 xml:id="sec.docker.setup.net">
-  <title>Networking</title>
-
+  <title>Configuring Network</title>
   <para>
    If you want your containers to be able to access the external network, you
-   must enable the <option>ipv4 ip_forward</option> rule. This can be done
-   using &yast; by browsing to <menuchoice> <guimenu>System</guimenu>
-   <guimenu>Network Settings</guimenu> <guimenu>Routing</guimenu> </menuchoice>
-   menu and ensuring <option>Enable IPv4 Forwarding</option> is checked.
+   must enable the <option>ipv4 ip_forward</option> rule.
   </para>
-
-  <para>
-   This option cannot be changed when networking is handled by the Network
-   Manager. In such cases the <filename>/etc/sysconfig/SuSEfirewall2</filename>
-   file needs to be edited manually to ensure the <option>FW_ROUTE</option>
-   flag is set to <option>yes</option>:
-  </para>
-  <screen>FW_ROUTE="yes"</screen>
+  <sect2 xml:id="sec.docker.setup.net.forward">
+   <title>Enabling IPv4 Forwarding</title>
+   <para>
+    This can be done using &yast; by browsing to
+    <menuchoice> <guimenu>System</guimenu>
+    <guimenu>Network Settings</guimenu> <guimenu>Routing</guimenu> </menuchoice>
+    menu and ensuring <option>Enable IPv4 Forwarding</option> is checked.
+   </para>
+   <para>
+    The option cannot be changed when networking is handled by the Network
+    Manager. In such cases the <filename>/etc/sysconfig/SuSEfirewall2</filename>
+    file needs to be edited manually to ensure the <option>FW_ROUTE</option>
+    flag is set to <option>yes</option>:
+   </para>
+   <screen>FW_ROUTE="yes"</screen>
+  </sect2>
 
   <sect2 xml:id="sec.docker.setup.net.power">
    <title>Networking Limitations on Power Architecture</title>
@@ -172,7 +187,7 @@
     Currently &docker; networking has two limitations on the &power; architecture.
    </para>
    <para>
-    The first limitation is about iptables. &slea; machines cannot run
+    The first limitation is about iptables. &productname; machines cannot run
     &deng; with the iptables support enabled. An update of the kernel is going
     to solve this issue. In the meantime the <package>docker</package> package
     for &power; has
@@ -205,7 +220,7 @@
     or accessing arbitrary ports of each other.
    </para>
   </sect2>
-  </sect1>
+ </sect1>
 
   <sect1 xml:id="sec.docker.setup.updates">
   <title>Updates</title>
