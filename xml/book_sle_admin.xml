@@ -126,5 +126,6 @@
      as discussed in doc team meeting-->
  <!--<xi:include href="admin_docupdates.xml"/>-->
  <xi:include href="network_scheme.xml"/>
+ <xi:include href="common_intro_available_doc_i.xml"/>
  <xi:include href="common_legal.xml"/>
 </book>
