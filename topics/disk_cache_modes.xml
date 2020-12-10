@@ -5,7 +5,7 @@
     %entities;
 ]>
 
-<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="cha-cachemodes">
+<topic xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="cha-cachemodes">
  <title>Disk Cache Modes</title>
  <info>
       <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -14,7 +14,7 @@
       </dm:docmanager>
     </info>
     <para/>
- <sect1 xml:id="sec-cachemodes">
+ <section xml:id="sec-cachemodes">
   <title>Disk Interface Cache Modes</title>
 
   <para>
@@ -29,7 +29,7 @@
    follows:
   </para>
 
-  <itemizedlist mark="bullet" spacing="normal">
+  <itemizedlist>
    <listitem>
     <para>
      Read/write data may be cached in the host page cache.
@@ -65,8 +65,8 @@
    should plan each guest's configuration carefully and experiment with
    various configurations to determine the optimal performance.
   </para>
- </sect1>
- <sect1 xml:id="cachemodes-descr">
+ </section>
+ <section xml:id="cachemodes-descr">
   <title>Description of Cache Modes</title>
 
   <variablelist>
@@ -170,9 +170,9 @@
     </listitem>
    </varlistentry>
   </variablelist>
- </sect1>
+ </section>
 
- <sect1 xml:id="qemu-cachemodes-data-integrity">
+ <section xml:id="qemu-cachemodes-data-integrity">
   <title>Data Integrity Implications of Cache Modes</title>
 
   <variablelist>
@@ -222,9 +222,9 @@
     </listitem>
    </varlistentry>
   </variablelist>
- </sect1>
+ </section>
 
- <sect1 xml:id="qemu-cachemodes-performance">
+ <section xml:id="qemu-cachemodes-performance">
   <title>Performance Implications of Cache Modes</title>
 
   <para>
@@ -240,8 +240,8 @@
    host page cache, the ratio of reads to writes, and the use of AIO mode
    <literal>native</literal> (see below) should also be considered.
   </para>
- </sect1>
- <sect1 xml:id="sec-cache-mode-live-migration">
+ </section>
+ <section xml:id="sec-cache-mode-live-migration">
   <title>Effect of Cache Modes on Live Migration</title>
 
   <para>
@@ -276,5 +276,5 @@
     <systemitem>fdatasync()</systemitem>.
    </para>
   </tip>
- </sect1>
-</chapter>
+ </section>
+</topic>
