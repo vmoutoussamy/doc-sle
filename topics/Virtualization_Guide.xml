@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-model href="assembly51b7.rnc"  type="application/relax-ng-compact-syntax"?>
+<?xml-model href="http://docbook.org/xml/5.1/sch/assembly.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<assembly xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://docbook.org/ns/docbook">
+ <resources>
+  <resource fileref="disk_cache_modes.xml" xml:id="disk-cache-modes">
+   <description>Disk cache modes</description>
+  </resource>
+ </resources>
+ <structure resourceref="virtualization-guide">
+  <output renderas="article"/>
+  <module resourceref="disk-cache-modes"/>
+ </structure>
+</assembly>
