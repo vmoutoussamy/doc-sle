@@ -1,6 +1,7 @@
 #!/bin/bash
 
-ASSEMBLY_XSL="/usr/share/xml/docbook/stylesheet/nwalsh5/current/assembly/assemble.xsl"
+#ASSEMBLY_XSL="/usr/share/xml/docbook/stylesheet/nwalsh5/current/assembly/assemble.xsl"
+ASSEMBLY_XSL="/usr/share/xml/docbook/stylesheet/docbook-xsl-ns/assembly/assemble.xsl"
 ASSEMBLY_FILE="topics/Virtualization_Guide.xml"
 REALIZED_XML="xml/Virtualization_Guide.xml"
 
