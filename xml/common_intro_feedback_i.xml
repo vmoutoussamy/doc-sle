@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE sect1
+<!DOCTYPE appendix
 [
   <!ENTITY % entities SYSTEM "entity-decl.ent">
     %entities;
 ]>
 
 <!--taroth 080104: included several times, therefore no ID here, all products-->
-<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
- <title>Giving Feedback</title>
+<appendix xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+ <title>Providing Feedback</title>
 
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
@@ -92,4 +92,4 @@
    </listitem>
   </varlistentry>
  </variablelist>
-</sect1>
+</appendix>

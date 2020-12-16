@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE sect1
+<!DOCTYPE appendix
 [
   <!ENTITY % entities SYSTEM "entity-decl.ent">
     %entities;
 ]>
-<sect1 version="5.0" xmlns="http://docbook.org/ns/docbook"
+<appendix version="5.0" xmlns="http://docbook.org/ns/docbook"
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xlink="http://www.w3.org/1999/xlink">
  <title>Product Life Cycle and Support</title>
@@ -73,7 +73,7 @@
    linkend="art-modules"/>.
  </para>
 
- <sect2>
+ <sect1>
   <title>Support Statement for &productname;</title>
   <para>
    To receive support, you need an appropriate subscription with &suse;. To
@@ -155,9 +155,9 @@
    &suse; will only support the usage of original packages. That is, packages
    that are unchanged and not recompiled.
   </para>
- </sect2>
+ </sect1>
 
- <sect2>
+ <sect1>
   <title>Technology Previews</title>
    <para>
     Technology previews are packages, stacks, or features delivered by &suse;
@@ -210,5 +210,5 @@
    For an overview of technology previews shipped with your product, see the
    release notes at <link xlink:href="https://www.suse.com/releasenotes/"/>.
   </para>
- </sect2>
-</sect1>
+ </sect1>
+</appendix>

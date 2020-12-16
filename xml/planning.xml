@@ -91,7 +91,7 @@
   </para>
   <para>
    &sls; provides you with a broad variety of services. Find an overview of the
-   documentation in this book in <xref linkend="pre-sle"/>. Most of the needed
+   documentation in this book in <xref linkend="available-doc"/>. Most of the needed
    configurations can be made with &yast;, the &suse; configuration utility. In
    addition, many manual configurations are described in the corresponding
    chapters.
