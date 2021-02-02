@@ -122,6 +122,8 @@
 <!-- ===================================================================== -->
 <!-- Appendix                                                              -->
 <!-- ===================================================================== -->
+ <part xml:id="part-appendices">
+  <title>Appendices</title>
  <!--taroth 2019-01-18: commenting docupdates for now
      as discussed in doc team meeting-->
  <!--<xi:include href="admin_docupdates.xml"/>-->
@@ -131,4 +133,5 @@
  <xi:include href="common_intro_typografie_i.xml"/>
  <xi:include href="common_intro_lifecycle_support_i.xml" os="sles;sled"/>
  <xi:include href="common_legal.xml"/>
+ </part>
 </book>
