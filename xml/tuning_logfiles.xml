@@ -322,7 +322,7 @@ Is this a systemd-related change? Should this then be removed entirely?</remark>
   </variablelist>
  </sect1>
  <sect1 xml:id="sec-tuning-syslog-view">
-  <title>Viewing and parsing log files</title>
+  <title>View and parse log files</title>
 
   <para>
    To view log files, you can use any text editor. There is also a simple
@@ -347,7 +347,7 @@ Is this a systemd-related change? Should this then be removed entirely?</remark>
   </para>
  </sect1>
  <sect1 xml:id="sec-tuning-syslog-logrotate">
-  <title>Managing log files with <command>logrotate</command></title>
+  <title>Manage log files with <command>logrotate</command></title>
 
   <para>
    Log files under <filename>/var/log</filename> grow on a daily basis and
@@ -814,7 +814,7 @@ FILES
 -->
  </sect1>
  <sect1 xml:id="sec-tuning-syslog-logwatch">
-  <title>Monitoring log files with <command>logwatch</command></title>
+  <title>Monitor log files with <command>logwatch</command></title>
 
   <para>
    <command>logwatch</command> is a customizable, pluggable log-monitoring
@@ -922,7 +922,7 @@ logwatch --service smartd --range 'between 5/5/2005 and 5/7/2005' \
   </variablelist>
  </sect1>
  <sect1 xml:id="sec-tuning-syslog-forward">
-  <title>Configuring mail forwarding for &rootuser;</title>
+  <title>Configure mail forwarding for &rootuser;</title>
   <para>
    System daemons, <systemitem class="daemon">cron</systemitem> jobs, &systemd;
    timers, and other applications can generate messages and send them to the
@@ -1030,7 +1030,7 @@ test
   </para>
  </sect1>
  <sect1 xml:id="sec-tuning-syslog-server">
-  <title>Forwarding log messages to a central log server</title>
+  <title>Forward log messages to a central log server</title>
   <para>
    System log data can be forwarded from individual systems to a central
    syslog server on the network. This allows administrators to get an overview
@@ -1222,7 +1222,7 @@ $UDPServerRun <replaceable>PORT</replaceable><xref linkend="co-tuning-syslog-ser
  </sect1>
  
  <sect1 xml:id="sec-tuning-syslog-logger">
-  <title>Using <command>logger</command> to make system log entries</title>
+  <title>Use <command>logger</command> to make system log entries</title>
 
   <para>
    <command>logger</command> is a tool for making entries in the system log.
