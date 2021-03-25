@@ -1986,28 +1986,21 @@ blacklist_exceptions {
    in the following situations:
   </para>
 
+<!-- the following variable list needs to be reviewed. Multipath is by default in intrd, if you don't want the root partition under multipath, you have to blacklist the partition. Otherwise, it's also no problem, you get a single-path multipath map with an almost negligible performance impact for I/O on the root disk, which is mostly cached anyway.
   <variablelist>
    <varlistentry>
     <term>Root device is using multipath:</term>
     <listitem>
+     
      <para>
       If the system root device is using multipath and you use the
       <literal>user_friendly_names</literal> option, the user-friendly settings
       in the <filename>/var/lib/multipath/bindings</filename> file are included
       in the <filename>initrd</filename>. If you later change the storage
-      setup, such as by adding or removing devices, there is a mismatch between
+      setup, such as by adding or removing devices and you don't update the mount points respectively, there is a mismatch between
       the bindings setting inside the <filename>initrd</filename> and the
       bindings settings in <filename>/var/lib/multipath/bindings</filename>.
      </para>
-     <warning>
-      <title>Binding mismatches</title>
-      <para>
-       A bindings mismatch between <filename>initrd</filename> and
-       <filename>/var/lib/multipath/bindings</filename> can lead to a wrong
-       assignment of mount points to devices, which can result in file system
-       corruption and data loss.
-      </para>
-     </warning>
      <para>
       To avoid this problem, we recommend that you use the default WWID
       settings for the system root device. You should not use aliases for the
@@ -2066,13 +2059,12 @@ defaults {
       this can happen if the system root device is on LVM. If you use the
       <literal>user_friendly_names</literal> option and multipath is in the
       <filename>initrd</filename>, you should boot with the parameter
-      <command>multipath=off</command> to avoid problems.
+      <command>multipath=off</command> to avoid problems. <!-- This definitely is not true, as user_friendly_names has nothing to do with MP in initrd-->
      </para>
      <para>
-      This disables multipath only in the <filename>initrd</filename> during
-      system boots. After the system boots, the
-      <filename>boot.multipath</filename> and <filename>multipathd</filename>
-      boot scripts can activate multipathing.
+      This disables multipath in the <filename>initrd</filename> during
+      system boots and you will not be able to activate multipathing by using the
+      scripts <filename>boot.multipath</filename> and <filename>multipathd</filename>.    
      </para>
     </listitem>
    </varlistentry>
@@ -2085,6 +2077,8 @@ defaults {
     </listitem>
    </varlistentry>
   </variablelist>
+  
+  -->
 
   <para>
    To enable user-friendly names or to specify aliases:
