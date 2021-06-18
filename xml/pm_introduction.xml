@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter
+[
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+    %entities;
+]>
+
+<chapter version="5.0" role="General" 
+  xml:id="cha-intro-to-podman"
+  xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+ <title>&podman; overview</title>
+ <info>
+  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+   <dm:bugtracker></dm:bugtracker>
+   <dm:translation>yes</dm:translation>
+  </dm:docmanager>
+ </info>
+ <section xml:id="pm-description">
+ <title>What is Podman</title>
+ <para>
+ &podman; is a daemonless container engine for managing linux containers. &podman; is a short name derived from Pod Manager Tool. By using &podman; you can build your own container images or you can run, 
+ </para>
+ </section>
+ 
+ <section xml:id="pm-architecture">
+ <title>Pods architecture</title>
+ <para>
+ A pod is a logical wrapper entity that groups several containers that share the same namespace and file system. A typical use case for organizing several containers to a pod is having several containers that needs a database and you do not want to have the database accessible through network. You can place the database container to the same pod and bind just to localhost. </para>
+ <para>Each pod has one <literal>pause</literal> container which is intended to hold the namespace associated with the particular pod and enables you to add other containers to the pod. The <literal>pause</literal> container goes to sleep as soon as created. The <literal>pause</literal> container maintains the pod even if you stop all other containers in the pod. The <literal>pause</literal> container is the one that have been assigned most of pod characteristics like port bindings, cgroup-parent values, and kernel namespaces. Once the pod is created you will not be able to create a container with different binding, you will have to create the container in another pod.</para>
+ <para>Each container has an instance of a container monitor. This monitor watches the container and if the container dies, it saves the exit code. The monitor also holds open the tty, so if &podman; is closed, the container can still run. </para>
+ <figure xml:id="fig-pod-architecture">
+ <title>Pods architecture</title>
+ <mediaobject>
+ <imageobject role="fo">
+      <imagedata os="slemicro" fileref="pod_architecture.png"
+                 width="100%"/>
+     </imageobject>
+     <imageobject role="html">
+      <imagedata os="slemicro" fileref="pod_architecture.png"
+                 width="100%"/>
+      </imageobject>
+ </mediaobject>
+ </figure>
+ </section>
+</chapter>

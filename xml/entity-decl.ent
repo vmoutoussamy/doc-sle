@@ -93,6 +93,7 @@
 <!ENTITY secguide       "<citetitle xmlns='http://docbook.org/ns/docbook'>Security and Hardening Guide</citetitle>">
 <!ENTITY rmtguide       "<citetitle xmlns='http://docbook.org/ns/docbook'>Repository Management Tool Guide</citetitle>">
 <!ENTITY upgrade_guide  "<citetitle xmlns='http://docbook.org/ns/docbook'>Upgrade Guide</citetitle>">
+<!ENTITY podman		"<citetitle xmlns='http://docbook.org/ns/docbook'>Podman Guide</citetitle>">
 
 <!-- ============================================================= -->
 <!--                    Platforms                                  -->
