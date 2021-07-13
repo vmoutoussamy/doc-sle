@@ -36,7 +36,7 @@
  <xi:include href="book_autoyast.xml"/>
 
 <!-- Upgrade -->
-<xi:include href="book_autoyast.xml"/>
+<xi:include href="book_upgrade.xml"/>
 
  <!-- Quick Starts -->
  <book version="5.0" xml:lang="en" xml:id="book-quick-start">
